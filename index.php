@@ -44,16 +44,35 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>PHP Hotel</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
     <body>
-        <h1>Hotel List</h1>
-        <?php foreach ($hotels as $hotel): ?>
-            <h2><?php echo $hotel['name']; ?></h2>
-            <p><?php echo $hotel['description']; ?></p>
-            <p>Parking: <?php echo $hotel['parking'] ? 'Yes' : 'No'; ?></p>
-            <p>Vote: <?php echo $hotel['vote']; ?></p>
-            <p>Distance to center: <?php echo $hotel['distance_to_center']; ?> km</p>
-        <?php endforeach; ?>
+        <div class="container">
+            <h1>Hotel List</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Parking</th>
+                        <th>Vote</th>
+                        <th>Distance to center (km)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($hotels as $hotel): ?>
+                        <tr>
+                            <td><?php echo $hotel['name']; ?></td>
+                            <td><?php echo $hotel['description']; ?></td>
+                            <td><?php echo $hotel['parking'] ? 'Yes' : 'No'; ?></td>
+                            <td><?php echo $hotel['vote']; ?></td>
+                            <td><?php echo $hotel['distance_to_center']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>
